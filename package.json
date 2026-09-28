@@ -1,0 +1,34 @@
+{
+  "name": "react_queries_namaste",
+  "version": "1.0.0",
+  "description": "React Food Ordering APP",
+  "keywords": [
+    "React"
+  ],
+  "homepage": "https://github.com/pranjulpandey22/FoodieHub#readme",
+  "bugs": {
+    "url": "https://github.com/pranjulpandey22/FoodieHub/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pranjulpandey22/FoodieHub.git"
+  },
+  "license": "ISC",
+  "author": "Pranjul",
+  "type": "commonjs",
+  "scripts": {
+    "start":"parcel index.html",
+    "build":"parcel build index.html",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "parcel": "^2.16.4"
+  },
+  "dependencies": {
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
+  },
+  "browserslist":[
+    "last 5 versions"
+  ]
+}
