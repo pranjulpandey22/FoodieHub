@@ -1,0 +1,101 @@
+
+/* =========================
+   Shimmer Image
+========================= */
+
+.shimmer-image {
+  width: 100%;
+  height: 200px;
+
+  border-radius: 12px;
+
+  background: linear-gradient(
+    90deg,
+    #eeeeee 25%,
+    #dddddd 50%,
+    #eeeeee 75%
+  );
+
+  background-size: 200% 100%;
+
+  animation: shimmer 1.5s infinite;
+}
+
+/* =========================
+   Shimmer Text
+========================= */
+
+.shimmer-title {
+  width: 70%;
+  height: 20px;
+
+  margin-top: 5px;
+
+  border-radius: 5px;
+
+  background: linear-gradient(
+    90deg,
+    #eeeeee 25%,
+    #dddddd 50%,
+    #eeeeee 75%
+  );
+
+  background-size: 200% 100%;
+
+  animation: shimmer 1.5s infinite;
+}
+
+.shimmer-text {
+  width: 85%;
+  height: 14px;
+
+  border-radius: 5px;
+
+  background: linear-gradient(
+    90deg,
+    #eeeeee 25%,
+    #dddddd 50%,
+    #eeeeee 75%
+  );
+
+  background-size: 200% 100%;
+
+  animation: shimmer 1.5s infinite;
+}
+
+.shimmer-text.short {
+  width: 55%;
+}
+
+.shimmer-text.small {
+  width: 40%;
+}
+
+/* =========================
+   Animation
+========================= */
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* =========================
+   Responsive
+========================= */
+
+@media (max-width: 600px) {
+  .shimmer-container {
+    justify-content: center;
+  }
+
+  .shimmer-card {
+    width: 100%;
+    max-width: 350px;
+  }
+}

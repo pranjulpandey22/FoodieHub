@@ -1,62 +1,48 @@
 import RestraduntCard from "./RestraduntCard";
-import '../css/Body.css'
-import {useState} from 'react'
+import "../css/Body.css";
+import { useState, useEffect } from "react";
+import Shimmer from "./Shimmer";
 const Body = () => {
-  const MockData = [
-  {
-    data: {
-      id: 23424,
-      name: 'KFC',
-      cusines: ['burger', 'briyani', 'Snacks'],
-      avgRatings: '4.1'
-    }
-  },
-  {
-    data: {
-      id: 23425,
-      name: 'Dominos',
-      cusines: ['burger', 'briyani', 'Snacks'],
-      avgRatings: '3'
-    }
-  },
-  {
-    data: {
-      id: 23426,
-      name: 'Pizza Hut',
-      cusines: ['burger', 'briyani', 'Snacks'],
-      avgRatings: '4.9'
-    }
-  }
-];
+  const API =
+    "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7040592&lng=77.10249019999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
 
+  const [data, setData] = useState([]);
 
-  const[filterData,setFilterData]= useState(MockData)
+  const fetchDataAPI = async () => {
+    const data = await fetch(API);
+    const response = await data.json();
+    setData(
+      response?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+        ?.restaurants,
+    );
+  };
+  useEffect(() => {
+    fetchDataAPI();
+  }, []);
 
-  const handleFilter = ()=>{
-   const filterDatas= MockData.filter((ele)=>{
-      return ele.data.avgRatings > 4
-    })
-    setFilterData(filterDatas)
-  }
-  console.log(filterData,'adsasd')
+  const handleFilter = () => {
+    const filterDatas = data.filter((ele) => {
+      return ele.info.avgRating > 4.2;
+    });
+    setData(filterDatas);
+  };
 
   return (
-    <div>
+    <div className="body">
       <div className="search">
-        <button onClick={()=>handleFilter()}> Top Rated Restradunt </button>
+        <button onClick={() => handleFilter()}> Top Rated Restradunt </button>
         <input type="text" />
         <button>Search</button>
       </div>
-      <div className="res-container">
-        {filterData.map((ele)=>{
-          return(
-            <div key={ele.data.id}>
-               <RestraduntCard  resData={ele.data}/>
-            </div>
-          )
-        })}
-       
-      </div>
+      {data.length === 0 ? (
+        <Shimmer />
+      ) : (
+        <div className="res-container">
+          {data.map((ele) => (
+            <RestraduntCard key={ele.info.id} resData={ele.info} />
+          ))}
+        </div>
+      )}
     </div>
   );
 };

@@ -1,17 +1,121 @@
+/* =========================
+   Restaurant Card
+========================= */
+
 .res-card {
   width: 300px;
-  height: 350px;
-  padding: 5px;
+  min-height: 350px;
+
+  padding: 10px;
+
   display: flex;
   flex-direction: column;
-  transition: transform 0.2s ease;
+  gap: 8px;
+
+  background-color: #ffffff;
+
+  border: 2px solid transparent;
+  border-radius: 15px;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
 }
+
+/* =========================
+   Card Hover
+========================= */
+
 .res-card:hover {
-  border: 2px solid black;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-  border-radius: 20px;
-  transform: scale(1.05);
+  border-color: #eeeeee;
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+
+  transform: translateY(-5px);
 }
+
+/* =========================
+   Restaurant Image
+========================= */
+
 .resImage {
   width: 100%;
+  height: 200px;
+
+  object-fit: cover;
+  /* object-fit: contain; */
+
+  border-radius: 12px;
+
+  display: block;
+
+  transition: transform 0.2s ease;
+}
+
+.res-card:hover .resImage {
+  transform: scale(1.02);
+}
+
+/* =========================
+   Restaurant Name
+========================= */
+
+.res-card span:first-of-type {
+  margin-top: 5px;
+
+  font-size: 18px;
+  font-weight: 700;
+
+  color: #222222;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* =========================
+   Restaurant Details
+========================= */
+
+.res-card span {
+  color: #555555;
+  font-size: 14px;
+}
+
+/* =========================
+   Cuisine
+========================= */
+
+.res-card h5 {
+  margin: 0;
+
+  color: #666666;
+
+  font-size: 13px;
+  font-weight: 400;
+
+  line-height: 1.4;
+}
+
+/* =========================
+   Delivery Time
+========================= */
+
+.res-card h5:last-child {
+  color: #333333;
+  font-weight: 500;
+}
+
+/* =========================
+   Responsive
+========================= */
+
+@media (max-width: 600px) {
+  .res-card {
+    width: 100%;
+    max-width: 350px;
+  }
 }

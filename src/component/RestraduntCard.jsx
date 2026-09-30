@@ -1,18 +1,20 @@
 import '../css/RestraduntCard.css';
-
+import { Image_url } from '../utils/constant';
 const RestraduntCard = ({ resData}) => {
-
+ const {avgRating,name,areaName} = resData
   return (
     <div className="res-card">
       <img
         className="resImage"
-        src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/7b4d4881a89da72cbf421dd5cde7dd3c"
+       src={Image_url + resData.cloudinaryImageId}
         alt=""
       />
-      <span>{resData.name}</span>
-      <span> 5 KM </span>
-      <span>{resData.avgRatings}</span>
-      <h5>{resData.cusines.join(',')} </h5>
+      <span>{name}</span>
+      <span>{areaName} </span>
+      <span>{resData.costForTwo}</span>
+      <span>{avgRating}⭐️</span>
+      <h5>[{resData.cuisines.join(',')}] </h5>
+      <h5>{resData.sla.slaString}</h5>
   
     </div>
   );
