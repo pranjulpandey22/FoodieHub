@@ -45,7 +45,7 @@ Start the development server:
 
 npm run dev
 
-
+---
 ## 📈 Learning Progress
 
 - [x] Chapter 01 – React Basics
