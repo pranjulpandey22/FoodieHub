@@ -8,8 +8,9 @@ A food ordering web application built with React.js while learning and practicin
 |---|---|
 | [Chapter 01](./docs/chapter-01-react-basics.md) | React Basics |
 | [Chapter 02](./docs/chapter-02-npm-parcel.md) | NPM, Package Management & Parcel |
-| Chapter 03 | Coming Soon |
-| Chapter 04 | Coming Soon |
+| [Chapter 03](./docs/chapter-03-igniting-our-app.md) | Igniting Our App | JSX | 
+| [Chapter 04](./docs/chapter-04-code-the-app.md) | Code the App | component | props | Key and cofig
+| [Chapter 05](./docs/chapter-05-react-hooks.md) | React Hooks — useState | react fiber 
 
 Click a chapter above to open its complete notes.
 
@@ -24,6 +25,8 @@ Click a chapter above to open its complete notes.
 - JavaScript
 - HTML
 - CSS
+- Tailwind Css
+- Redux ToolKit
 - NPM
 - Parcel
 
