@@ -1,0 +1,17 @@
+.res-card {
+  width: 300px;
+  height: 350px;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease;
+}
+.res-card:hover {
+  border: 2px solid black;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  border-radius: 20px;
+  transform: scale(1.05);
+}
+.resImage {
+  width: 100%;
+}

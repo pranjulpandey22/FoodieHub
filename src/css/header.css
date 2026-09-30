@@ -1,0 +1,140 @@
+/* =========================
+   Navbar
+========================= */
+
+.nav-bar {
+  height: 80px;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 60px;
+
+  background-color: #ffffff;
+
+  border-bottom: 1px solid #eeeeee;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* Logo */
+
+.image {
+  display: flex;
+  align-items: center;
+}
+
+.image img {
+  width: 170px;
+  height: auto;
+
+  display: block;
+
+  object-fit: contain;
+
+  cursor: pointer;
+
+  transition: transform 0.2s ease;
+}
+
+.image img:hover {
+  transform: scale(1.05);
+}
+
+/* =========================
+   Right Navigation
+========================= */
+
+.header-right ul {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+  list-style: none;
+}
+
+.header-right a {
+  position: relative;
+  text-decoration: none;
+  color: #333333;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.header-right a:hover {
+  color: #ff6b00;
+}
+
+/* Hover underline */
+
+.header-right a:not(.cart)::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -7px;
+
+  width: 0;
+  height: 2px;
+
+  background-color: #ff6b00;
+
+  transition: width 0.25s ease;
+}
+
+.header-right a:not(.cart):hover::after {
+  width: 100%;
+}
+
+/* =========================
+   Cart Button
+========================= */
+
+.cart {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 10px 18px;
+
+  color: #ffffff !important;
+
+  background-color: #ff6b00;
+
+  border-radius: 25px;
+
+  transition: all 0.2s ease;
+}
+
+.cart:hover {
+  background-color: #e85d00;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 5px 12px rgba(255, 107, 0, 0.25);
+}
+
+/* =========================
+   Responsive
+========================= */
+
+@media (max-width: 700px) {
+  .nav-bar {
+    padding: 0 25px;
+  }
+
+  .image img {
+    width: 140px;
+  }
+
+  .header-right ul {
+    gap: 18px;
+  }
+
+  .header-right a {
+    font-size: 14px;
+  }
+}

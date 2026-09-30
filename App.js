@@ -1,6 +1,18 @@
- import React from 'react'     
- import ReactDOM from 'react-dom/client'
-// React.createElement=>Object => if we render the element HTMLElement in DOM(render)
- const heading = React.createElement('h1',{},'Hello React from foundation') 
- const root = ReactDOM.createRoot(document.getElementById('root'))
- root.render(heading)
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import Header from "./src/component/Header";
+import Body from "./src/component/Body";
+
+const App = () => {
+  return (
+    <div className="main">
+      <Header />
+      <Body />
+    </div>
+  );
+};
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+root.render(<App />);
