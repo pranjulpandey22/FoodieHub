@@ -12,8 +12,8 @@ const RestraduntCard = ({ resData}) => {
       <span>{name}</span>
       <span>{areaName} </span>
       <span>{resData.costForTwo}</span>
-      <span>{avgRating}⭐️</span>
-      <h5>[{resData.cuisines.join(',')}] </h5>
+      <span>{avgRating} ⭐️</span>
+      <h5>[{resData.cuisines.join(',')}]</h5>
       <h5>{resData.sla.slaString}</h5>
   
     </div>
